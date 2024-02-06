@@ -8,17 +8,22 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <iterator>
 
 namespace WC {
 enum class command {
   COUNT,
   LINE,
+  WORD,
+  CHAR,
   INVALID
 };
 int execute(int argc, char *argv[]);
 command get_command(const std::string &command);
-void countByte(const std::string &file_name);
-void countLine(const std::string &file_name);
+long count_byte(const std::string &file_name);
+long count_line(const std::string &file_name);
+long count_word(const std::string &file_name);
+long count_char(const std::string &file_name);
 }// namespace WC
 
 #endif//DEMOWCPROJECT_SRC_PROCESS_H_
